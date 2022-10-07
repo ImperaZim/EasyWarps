@@ -2,7 +2,7 @@ name: EasyWarps
 version: 1.0.0
 author: ImperaZim 
 api: [4.0.0]
-main: ImperaZim\EasyWorld\Loader
+main: ImperaZim\EasyWarps\Loader
 
 permissions:
   warp.command:
