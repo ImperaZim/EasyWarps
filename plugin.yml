@@ -3,3 +3,7 @@ version: 1.0.0
 author: ImperaZim 
 api: [4.0.0]
 main: ImperaZim\EasyWorld\Loader
+
+permissions:
+  warp.command:
+    default: true
