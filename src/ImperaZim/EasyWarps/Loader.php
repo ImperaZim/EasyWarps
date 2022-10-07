@@ -29,6 +29,7 @@ class Loader extends PluginBase {
  public static function registerCommands() : void {
   $map = Server::getinstance()->getCommandMap();
 		$map->register("warp", new WarpCommand());
+		$map->register("warps", new WarpsCommand());
  }
 
  public static function registerWorlds() : void {
