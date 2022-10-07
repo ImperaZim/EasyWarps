@@ -36,8 +36,12 @@ class WarpsCommand extends Command implements PluginOwned {
     $x = $coord[0]; $y = $coord[1]; $z = $coord[2];
     $world = Server::getInstance()->getWorldManager()->getWorldByName($coord[3]);
     Server::getInstance()->getWorldManager()->loadWorld($coord[3]); 
+    if(!$player->hasPermission($config[$data]["permission"])) {
+     $player->sendMessage("§l§cWARP§r Você não tem permissão para teleportar para essa warp!"); 
+     return true;
+    }
     $player->teleport(new Position($x, $y, $z, $world));
-    $player->sendTitle("§e" . $config["form"]["title"]);
+    $player->sendTitle("§e" . $config[$data]["form"]["title"]);
    }
   });
   
