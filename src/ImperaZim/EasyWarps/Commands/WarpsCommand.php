@@ -1,5 +1,6 @@
 <?php
 
+use pocketmine\Server;
 use pocketmine\utils\Config;
 use pocketmine\player\Player;
 use pocketmine\world\Position;
@@ -21,7 +22,7 @@ class WarpsCommand extends Command implements PluginOwned {
    $plugin->getLogger()->warning("Este comando está desabilitado no console! Tente usa-lo dentro do jogo!");
    return true;
   }
-  //send Menu
+  self::Warps($player);
   return true;
  }
  
