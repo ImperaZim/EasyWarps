@@ -9,6 +9,7 @@ use ImperaZim\EasyWarps\Loader;
 use pocketmine\plugin\PluginOwned;
 use pocketmine\command\CommandSender;
 use ImperaZim\EasyWarps\Functions\WarpCreate;
+use ImperaZim\EasyWarps\Functions\WarpDelete;
 
 class WarpCommand extends Command implements PluginOwned {
 
@@ -32,6 +33,18 @@ class WarpCommand extends Command implements PluginOwned {
       WarpCreate::execute($player, $name, $permission);
      }else{
       $player->sendMessage("§l§cWARP§r Você não tem permissão para criar uma warp!");
+     }
+     break;
+    case 'delete': case 'deletar':
+     if ($player->hasPermission("warp.delete")) {
+      if (!isset($args[1])) {
+       $player->sendMessage("§l§cWARP§r Você precisa digitar o nome da warp! Use /warp delete (name)!");
+       return true;
+      }
+      $name = $args[1];
+      WarpDelete::execute($player, $name); 
+     }else{
+      $player->sendMessage("§l§cWARP§r Você não tem permissão para deletar uma warp!");
      }
      break;
    }
