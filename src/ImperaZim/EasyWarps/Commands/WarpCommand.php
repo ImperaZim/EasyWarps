@@ -20,6 +20,9 @@ class WarpCommand extends Command implements PluginOwned {
  
  public function execute(CommandSender $player, string $commandLabel, array $args) : bool {
   $plugin = $this->getOwningPlugin();
+  if (!$player instanceof Player) {
+   $plugin->getLogger()->warning("Este comando está desabilitado no console! Tente usa-lo dentro do jogo!");
+  }
   if (isset($args[0])) {
    switch ($args[0]) {
     case 'create': case 'criar':
