@@ -33,6 +33,7 @@ class WarpCommand extends Command implements PluginOwned {
       WarpCreate::execute($player, $name, $permission);
      }else{
       $player->sendMessage("§l§cWARP§r Você não tem permissão para criar uma warp!");
+      return true;
      }
      break;
     case 'delete': case 'deletar':
@@ -45,6 +46,7 @@ class WarpCommand extends Command implements PluginOwned {
       WarpDelete::execute($player, $name); 
      }else{
       $player->sendMessage("§l§cWARP§r Você não tem permissão para deletar uma warp!");
+      return true;
      }
      break;
    }
