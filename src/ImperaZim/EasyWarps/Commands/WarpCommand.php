@@ -24,8 +24,11 @@ class WarpCommand extends Command implements PluginOwned {
     case 'create': case 'criar':
      if ($player->hasPermission("warp.create")) {
       if (!isset($args[1])) {
+       $player->sendMessage("§l§cWARP§r Você precisa digitar o nome da warp! Use /warp create (name)!");
        return true;
       }
+      $name = $args[1];
+      $permission = isset($args[2]) ? $args[2] : "";
       WarpCreate::execute($player, $name, $permission);
      }else{
       $player->sendMessage("§l§cWARP§r Você não tem permissão para criar uma warp!");
