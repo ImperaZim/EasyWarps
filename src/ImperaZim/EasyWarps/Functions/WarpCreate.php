@@ -20,7 +20,8 @@ class WarpCreate {
   $position = $PosX . ":" . $PosY . ":" . $PosZ . ":" . $world;
   
   if (isset($config->getAll()[$name])) {
-   //warp has exists
+   $player->sendMessage("§l§cWARP§r Está warp já existe! Tem outro noem ou exclua a existente!");
+   return true;
   }else{ 
    $config = new Config($data . "warps.yml", Config::YAML, [
     "$name" => [
@@ -33,7 +34,7 @@ class WarpCreate {
     ],
    ]);
    $config->save();
-   //sucess message
+   $player->sendMessage("§l§cWARP§r Warp {$name} criada com sucesso!");
   }
  }
  
