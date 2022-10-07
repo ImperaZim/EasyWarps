@@ -1,5 +1,7 @@
 <?php
 
+namespace ImperaZim\EasyWarps\CommandCommands;
+
 use pocketmine\Server;
 use pocketmine\utils\Config;
 use pocketmine\player\Player;
