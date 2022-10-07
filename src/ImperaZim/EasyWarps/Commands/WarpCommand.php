@@ -53,6 +53,7 @@ class WarpCommand extends Command implements PluginOwned {
   }else{
    $player->sendMessage("§l§cWARP§r Argumento invalido! Use /warp (criar, deletar)!");
   }
+  return true;
  }
  
  public function getOwningPlugin(): Loader {
