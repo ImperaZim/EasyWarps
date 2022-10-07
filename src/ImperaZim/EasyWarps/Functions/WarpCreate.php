@@ -20,7 +20,6 @@ class WarpCreate {
   
   if (isset($config->getAll()[$name])) {
    $player->sendMessage("§l§cWARP§r Está warp já existe! Tente outro nome ou exclua a existente!");
-   return true;
   }else{ 
    $config = new Config($data . "warps.yml", Config::YAML, [
     "$name" => [
