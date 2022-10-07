@@ -14,7 +14,6 @@ class WarpDelete {
   
   if (!isset($config->getAll()[$name])) {
    $player->sendMessage("§l§cWARP§r Está warp não existe!");
-   return true;
   }else{ 
    unset($config->getAll()[$name]);
    $config->setAll($config->getAll()); 
