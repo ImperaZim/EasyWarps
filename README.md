@@ -1,5 +1,5 @@
 # EasyWarps [![](https://poggit.pmmp.io/shield.state/EasyWorld)](https://poggit.pmmp.io/p/EasyWorld)
-![EasyWarps]()
+![EasyWarps](https://media.discordapp.net/attachments/645792232632221729/1028076409702318120/1665182905398.png)
 
 A simple plugin to set teleport points on worlds to make it easier for players to get around! <br> **[Download phar]()** ``Beta Version``
 - - - -
