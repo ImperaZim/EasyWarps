@@ -31,7 +31,7 @@ class WarpsCommand extends Command implements PluginOwned {
  
  public static function Warps($player) {
   $form = FormAPI::createSimpleForm(function($player, $data = null) {
-   $config = (new Config(self::getPlugin()->getDataFolder() . "warps.yml"))->getAll(); 
+   $config = (new Config(Loader::getInstance()->getDataFolder() . "warps.yml"))->getAll(); 
    
    if($data == "back") { return true; }
    if($data != null){
@@ -52,7 +52,7 @@ class WarpsCommand extends Command implements PluginOwned {
    }
   });
   
-  $config = new Config(self::getPlugin()->getDataFolder() . "warps.yml"); 
+  $config = new Config(Loader::getInstance()->getDataFolder() . "warps.yml"); 
   $config = $config->getAll();
   
   $form->setTitle("§eLista de Warps");
