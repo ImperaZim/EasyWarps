@@ -8,6 +8,7 @@ use ImperaZim\EasyWarps\Utils\Form\types\CustomForm;
 use ImperaZim\EasyWarps\Utils\Form\types\SimpleForm;
 
 class FormAPI {
+ 
  public static function createCustomForm(?callable $function = null) : CustomForm {
   return new CustomForm($function);
  }
