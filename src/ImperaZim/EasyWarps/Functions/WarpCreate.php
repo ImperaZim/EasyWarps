@@ -10,7 +10,6 @@ class WarpCreate {
  public static function execute($player, $name, $permission = "") : void {
   $plugin = Loader::getInstance();
   $config = new Config($plugin->getDataFolder() . "warps.yml");
-  $warps = $config->getAll();
   $data = $plugin->getDataFolder();
   
   $PosX = (int) $player->getPosition()->getX();
