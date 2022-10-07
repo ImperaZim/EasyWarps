@@ -6,7 +6,7 @@ main: ImperaZim\EasyWorld\Loader
 
 permissions:
   warp.command:
-    default: true
+    default: op
   warps.command:
     default: true
   warp.create:
