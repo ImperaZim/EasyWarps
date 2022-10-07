@@ -19,7 +19,7 @@ class WarpCreate {
   $world = (string) $player->getWorld()->getDisplayName();
   $position = $PosX . ":" . $PosY . ":" . $PosZ . ":" . $world;
   
-  if (isset($warps[$name])) {
+  if (isset($config->getAll()[$name])) {
    //warp has exists
   }else{ 
    $config = new Config($data . "warps.yml", Config::YAML, [
