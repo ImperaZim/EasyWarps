@@ -1,6 +1,6 @@
 <?php
 
-namespace ImperaZim\EasyWarps\CommandCommands;
+namespace ImperaZim\EasyWarps\Commands;
 
 use pocketmine\Server;
 use pocketmine\utils\Config;
@@ -64,7 +64,7 @@ class WarpsCommand extends Command implements PluginOwned {
   return $form;  
  }
  
- public function getOwningPlugin(): Loader {
+ public function getOwningPlugin() : Loader {
 		return Loader::getInstance();
 	}  
 
