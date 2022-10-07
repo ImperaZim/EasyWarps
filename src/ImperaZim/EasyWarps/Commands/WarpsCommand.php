@@ -1,6 +1,6 @@
 <?php
 
-namespace ImperaZim\EasyWarps\Commands;
+namespace ImperaZim\EasyWarps\CommandCommands;
 
 use pocketmine\Server;
 use pocketmine\utils\Config;
@@ -36,6 +36,10 @@ class WarpsCommand extends Command implements PluginOwned {
    if($data != null){
     $coord = explode(":", $config[$data]["coordinates"]);
     $x = $coord[0]; $y = $coord[1]; $z = $coord[2];
+    if(!in_array($coord[3], Server::getInstance()->getWorldManager()->getWorlds())){
+      $player->sendMessage("§l§cWARP§r Não foi possivel teleportat para a warp pois a warp está em um mundo corrompido ou não carregado!"); 
+     return true;
+    }
     $world = Server::getInstance()->getWorldManager()->getWorldByName($coord[3]);
     Server::getInstance()->getWorldManager()->loadWorld($coord[3]); 
     if(!$player->hasPermission($config[$data]["permission"])) {
