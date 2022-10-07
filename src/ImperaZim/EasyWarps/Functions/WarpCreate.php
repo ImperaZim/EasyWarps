@@ -7,7 +7,7 @@ use ImperaZim\EasyWarps\Loader;
 
 class WarpCreate {
  
- public static function execute($player, $name, $permission = "") : void {
+ public static function execute($player, $name, $permission) : void {
   $plugin = Loader::getInstance();
   $config = new Config($plugin->getDataFolder() . "warps.yml");
   $data = $plugin->getDataFolder();
@@ -28,7 +28,7 @@ class WarpCreate {
      "permission" => "$permission", 
      "form" => [
       "title" => "$name", 
-      "icon" => ""
+      "icon" => "$permission"
      ]
     ],
    ]);
