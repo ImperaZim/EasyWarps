@@ -59,7 +59,7 @@ class WarpsCommand extends Command implements PluginOwned {
   $form->setContent("§8Click para teleportar!");
   $form->addButton("§cFechar", 0, "", "back");
   foreach ($config as $data){
-   $form->addButton(data["form"]["title"], 0, data["form"]["icon"], data["form"]["title"]);
+   $form->addButton($config["form"]["title"], 0, $config["form"]["icon"], $config["form"]["title"]);
   }
   $form->sendToPlayer($player);
   return $form;  
