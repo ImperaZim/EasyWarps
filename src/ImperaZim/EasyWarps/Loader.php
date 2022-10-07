@@ -3,26 +3,38 @@
 namespace ImperaZim\EasyWarps;
 
 use pocketmine\Server;
+use pocketmine\utils\Config;
 use pocketmine\plugin\PluginBase;
 
 class Loader extends PluginBase {
-  
-  public static $instance = null;
-  
-  public static function getinstance() : Loader {
-    return self::$instance;
-  } 
-  
-  public function onEnable() : void {
-    self::$instance = $this;
-    self::registerWorlds();
-  }
 
-  public static function registerWorlds() : void {
-  $worlds = scandir(->getDataPath() . "worlds/");
-  foreach($worlds as $world){
+ public static $instance = null;
+
+ public static function getinstance() : Loader {
+  return self::$instance;
+ }
+
+ public function onEnable() : void {
+  self::$instance = $this;
+  self::registerWorlds();
+  self::registerCommands();
+  self::registerWarpConfig();
+ }
+ 
+ public static function registerWarpConfig() {
+  new Config(self::$instance->getDataFolder() . "warps.yml"); 
+ } 
+ 
+ public static function registerCommands() : void {
+  $map = Server::getinstance()->getCommandMap();
+		$map->register("warp", new Commands\WarpCommand(self::$instance));
+ }
+
+ public static function registerWorlds() : void {
+  $worlds = scandir(Server::getinstance()->getDataPath(). "worlds/");
+  foreach ($worlds as $world) {
    Server::getinstance()->getWorldManager()->loadWorld($world);
-  } 
- }   
-  
-}  
+  }
+ }
+
+}
