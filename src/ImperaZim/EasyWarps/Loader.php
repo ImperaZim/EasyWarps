@@ -5,6 +5,7 @@ namespace ImperaZim\EasyWarps;
 use pocketmine\Server;
 use pocketmine\utils\Config;
 use pocketmine\plugin\PluginBase;
+use ImperaZim\EasyWarps\Commands\WarpCommand;
 
 class Loader extends PluginBase {
 
@@ -27,7 +28,7 @@ class Loader extends PluginBase {
  
  public static function registerCommands() : void {
   $map = Server::getinstance()->getCommandMap();
-		$map->register("warp", new Commands\WarpCommand(self::$instance));
+		$map->register("warp", new WarpCommand());
  }
 
  public static function registerWorlds() : void {
