@@ -1,6 +1,6 @@
 <?php
 
-namespace ImperaZim\EasyWarps\Command;
+namespace ImperaZim\EasyWarps\Commands;
 
 use pocketmine\Server;
 use pocketmine\utils\Config;
