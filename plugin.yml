@@ -9,3 +9,5 @@ permissions:
     default: true
   warp.create:
     default: op
+  warp.delete:
+    default: op
