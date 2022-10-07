@@ -6,6 +6,7 @@ use pocketmine\Server;
 use pocketmine\utils\Config;
 use pocketmine\plugin\PluginBase;
 use ImperaZim\EasyWarps\Commands\WarpCommand;
+use ImperaZim\EasyWarps\Commands\WarpsCommand;
 
 class Loader extends PluginBase {
 
