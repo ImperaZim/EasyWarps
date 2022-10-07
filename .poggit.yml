@@ -5,5 +5,5 @@ branches:
 projects:
   EasyWarps:
     path: ""
-    icon: "icon.pn" 
+    icon: "icon.png" 
 ...
