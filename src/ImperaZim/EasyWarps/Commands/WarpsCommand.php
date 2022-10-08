@@ -15,14 +15,14 @@ use ImperaZim\EasyWarps\Utils\Form\FormAPI;
 class WarpsCommand extends Command implements PluginOwned {
  
  public function __construct() {
-  parent::__construct("warps", "§7Lista de warps!", null, []);
+  parent::__construct("warps", "§7Warp's menu!", null, []);
 		$this->setPermission("easywarps.default.command"); 
  }
  
  public function execute(CommandSender $player, string $commandLabel, array $args) : bool {
   $plugin = $this->getOwningPlugin(); 
   if (!$player instanceof Player) {
-   $plugin->getLogger()->warning("Este comando está desabilitado no console! Tente usa-lo dentro do jogo!");
+   $plugin->getLogger()->warning("This command is disabled in the console!  Try using it in-game!");
    return true;
   }
   self::Warps($player);
@@ -38,7 +38,7 @@ class WarpsCommand extends Command implements PluginOwned {
     $coord = explode(":", $config[$data]["coordinates"]);
     $x = $coord[0]; $y = $coord[1]; $z = $coord[2];
     if(!in_array($coord[3], Server::getInstance()->getWorldManager()->getWorlds())){
-      $player->sendMessage("§l§cWARP§r Não foi possivel teleportat para a warp pois a warp está em um mundo corrompido ou não carregado!"); 
+      $player->sendMessage("§l§cWARP§r Unable to teleport to warp because warp is in a corrupted or unloaded world!"); 
      return true;
     }
     $world = Server::getInstance()->getWorldManager()->getWorldByName($coord[3]);
