@@ -5,11 +5,7 @@ api: [4.0.0]
 main: ImperaZim\EasyWarps\Loader
 
 permissions:
-  warp.command:
+  easywarps.operator.command:
     default: op
-  warps.command:
+  easywarps.default.command:
     default: true
-  warp.create:
-    default: op
-  warp.delete:
-    default: op
