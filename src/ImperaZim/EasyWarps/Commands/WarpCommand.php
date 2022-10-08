@@ -27,7 +27,7 @@ class WarpCommand extends Command implements PluginOwned {
   if (isset($args[0])) {
    switch ($args[0]) {
     case 'create': case 'criar':
-     if ($player->hasPermission("warp.create")) {
+     if ($player->hasPermission("easywarps.operator.command")) {
       if (!isset($args[1])) {
        $player->sendMessage("§l§cWARP§r Você precisa digitar o nome da warp! Use /warp create (name)!");
        return true;
@@ -41,7 +41,7 @@ class WarpCommand extends Command implements PluginOwned {
      }
      break;
     case 'delete': case 'deletar':
-     if ($player->hasPermission("warp.delete")) {
+     if ($player->hasPermission("easywarps.operator.command")) {
       if (!isset($args[1])) {
        $player->sendMessage("§l§cWARP§r Você precisa digitar o nome da warp! Use /warp delete (name)!");
        return true;
