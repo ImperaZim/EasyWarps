@@ -15,7 +15,7 @@ class WarpCommand extends Command implements PluginOwned {
 
  public function __construct() {
   parent::__construct("warp", "§7Warp's command!", null, []);
-		$this->setPermission("warp.command"); 
+		$this->setPermission("easywarps.operator.command"); 
  }
  
  public function execute(CommandSender $player, string $commandLabel, array $args) : bool {
