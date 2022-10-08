@@ -14,14 +14,14 @@ use ImperaZim\EasyWarps\Functions\WarpDelete;
 class WarpCommand extends Command implements PluginOwned {
 
  public function __construct() {
-  parent::__construct("warp", "§7Warp command!", null, []);
+  parent::__construct("warp", "§7Warp's command!", null, []);
 		$this->setPermission("warp.command"); 
  }
  
  public function execute(CommandSender $player, string $commandLabel, array $args) : bool {
   $plugin = $this->getOwningPlugin();
   if (!$player instanceof Player) {
-   $plugin->getLogger()->warning("Este comando está desabilitado no console! Tente usa-lo dentro do jogo!");
+   $plugin->getLogger()->warning("This command is disabled in the console!  Try using it in-game!");
    return true;
   }
   if (isset($args[0])) {
@@ -29,33 +29,33 @@ class WarpCommand extends Command implements PluginOwned {
     case 'create': case 'criar':
      if ($player->hasPermission("easywarps.operator.command")) {
       if (!isset($args[1])) {
-       $player->sendMessage("§l§cWARP§r Você precisa digitar o nome da warp! Use /warp create (name)!");
+       $player->sendMessage("§l§cWARP§r You need to enter the warp name!  Use /warp create(name)");
        return true;
       }
       $name = $args[1];
       $permission = isset($args[2]) ? $args[2] : null;
       WarpCreate::execute($player, $name, $permission);
      }else{
-      $player->sendMessage("§l§cWARP§r Você não tem permissão para criar uma warp!");
+      $player->sendMessage("§l§cWARP§r You are not allowed to create a warp!");
       return true;
      }
      break;
     case 'delete': case 'deletar':
      if ($player->hasPermission("easywarps.operator.command")) {
       if (!isset($args[1])) {
-       $player->sendMessage("§l§cWARP§r Você precisa digitar o nome da warp! Use /warp delete (name)!");
+       $player->sendMessage("§l§cWARP§r You need to enter the warp name!  Use /warp delete(name)");
        return true;
       }
       $name = $args[1];
       WarpDelete::execute($player, $name); 
      }else{
-      $player->sendMessage("§l§cWARP§r Você não tem permissão para deletar uma warp!");
+      $player->sendMessage("§l§cWARP§r You are not allowed to delete a warp!");
       return true;
      }
      break;
    }
   }else{
-   $player->sendMessage("§l§cWARP§r Argumento invalido! Use /warp (criar, deletar)!");
+   $player->sendMessage("§l§cWARP§r Invalid argument!  Use /warp (create, delete)");
   }
   return true;
  }
