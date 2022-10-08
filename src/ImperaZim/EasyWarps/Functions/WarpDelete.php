@@ -13,12 +13,12 @@ class WarpDelete {
   $data = $plugin->getDataFolder();
   
   if (!isset($config->getAll()[$name])) {
-   $player->sendMessage("§l§cWARP§r Está warp não existe!");
+   $player->sendMessage("§l§cWARP§r This warp does not exist!");
   }else{ 
    unset($config->getAll()[$name]);
    $config->setAll($config->getAll()); 
    $config->save(); 
-   $player->sendMessage("§l§cWARP§r Warp {$name} deletada com sucesso!");
+   $player->sendMessage("§l§cWARP§r Warp {$name} successfully deleted!");
   }
  }
  
