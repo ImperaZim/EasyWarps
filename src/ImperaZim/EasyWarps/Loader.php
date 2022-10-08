@@ -18,7 +18,6 @@ class Loader extends PluginBase {
 
  public function onEnable() : void {
   self::$instance = $this;
-  self::registerWorlds();
   self::registerCommands();
   self::registerWarpConfig();
  }
@@ -31,13 +30,6 @@ class Loader extends PluginBase {
   $map = Server::getinstance()->getCommandMap();
 		$map->register("EasyWarps", new WarpCommand());
 		$map->register("EasyWarps", new WarpsCommand());
- }
-
- public static function registerWorlds() : void {
-  $worlds = scandir(Server::getinstance()->getDataPath(). "worlds/");
-  foreach ($worlds as $world) {
-   Server::getinstance()->getWorldManager()->loadWorld($world);
-  }
  }
 
 }
