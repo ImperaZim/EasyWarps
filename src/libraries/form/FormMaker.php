@@ -1,6 +1,6 @@
 <?php
 
-namespace form;
+namespace libraries\form;
 
 use player\Player;
 use libraries\form\BaseForm as IForm;
