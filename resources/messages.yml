@@ -2,6 +2,7 @@
 
 # FORM TEXTS
 warp_list_form: '§lWARPS'
+warp_list_empty: '§7Nenhum warp registrada'
 warp_list_button: '§l{WARP}§r{LINE_UP}teleportar'
 
 # COMMANDS CALLBACK MESSAGES

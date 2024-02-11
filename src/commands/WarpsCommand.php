@@ -4,10 +4,10 @@ namespace commands;
 
 use warp\Warp;
 use warp\WarpManager;
-use pocketmine\Player;
 use libraries\form\MenuForm;
 use libraries\form\FormMaker;
 use events\WarpTeleportEvent;
+use pocketmine\player\Player;
 use libraries\form\menu\Button;
 use libraries\commando\BaseCommand;
 
@@ -34,9 +34,6 @@ final class WarpsCommand extends BaseCommand {
   */
   protected function prepare(): void {
     $this->setPermission(self::BASE_PERMS);
-    $this->registerSubCommand(new arguments\Create('create', '§7Crie um novo ponto de teleport warp!'));
-    $this->registerSubCommand(new arguments\Delete('delete', '§7Delete um ponto de teleport warp!'));
-    $this->registerSubCommand(new arguments\Lista('list', '§7Veja os pontos de teleport warp salvos!'));
   }
 
   /**
@@ -51,9 +48,6 @@ final class WarpsCommand extends BaseCommand {
       if (!$player instanceof Player) {
         $this->sendConsoleError();
         return;
-      }
-      if (!$player instanceof Player) {
-        $player->sendMessage('Use /warp [args...]');
       }
       new WarpsForms($player, []);
     } catch (\Throwable $e) {
@@ -72,6 +66,7 @@ final class WarpsForms extends FormMaker {
       $this->setBaseForm(
         form: new MenuForm(
           title: \Plugin::getInstance()->messages->get('warp_created_fail', 'unknow_message'),
+          content: count((array) $this->getButtons()) > 0 ? '' : \Plugin::getInstance()->messages->get('warp_list_empty', 'unknow_message'),
           buttons: (array) $this->getButtons(),
           onSubmit: fn($player, $button) => $this->getSubmitCallback(
             player: $player,

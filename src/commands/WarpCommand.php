@@ -2,7 +2,7 @@
 
 namespace commands;
 
-use pocketmine\Player;
+use pocketmine\player\Player;
 use libraries\commando\BaseCommand;
 
 /**
@@ -45,9 +45,7 @@ final class WarpCommand extends BaseCommand {
         $this->sendConsoleError();
         return;
       }
-      if (!$player instanceof Player) {
-        $player->sendMessage('Use /warp [args...]');
-      }
+      $player->sendMessage('Use /warp [args...]');
     } catch (\Throwable $e) {
       new \crashdump($e);
     }
