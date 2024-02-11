@@ -14,12 +14,6 @@ final class File {
 
   private Config $config;
 
-  public const EXTENSIONS = [
-    'YML' => '.yml',
-    'YAML' => '.yml',
-    'JSON' => '.json',
-  ];
-
   /**
   * File constructor.
   * @param string $file
@@ -30,16 +24,11 @@ final class File {
     ?string $extension = 'YAML'
   ) {
     try {
-      $nestedeys = array_keys(self::EXTENSIONS);
-      $values = array_values(self::EXTENSIONS);
-      $extension = str_replace($nestedeys, $values, strtoupper($extension));
-      $filePath = Path::getDataFolder() . $file . $extension;
+      $filePath = Path::getDataFolder() . $file . '.yml';
       if (!file_exists($filePath)) {
-        \Plugin::getInstance()->saveResource($file . $extension);
+        \Plugin::getInstance()->saveResource($file . '.yml');
       }
-      if (in_array($extension, array_values(self::EXTENSIONS))) {
-        $this->config = new Config($filePath);
-      }
+      $this->config = new Config($filePath);
     } catch (\Throwable $e) {
       new \crashdump($e);
     }
