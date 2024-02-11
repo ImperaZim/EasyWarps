@@ -116,7 +116,7 @@ final class WarpsForms extends FormMaker {
       
       $position = $warp->getPosition();
       $manager = \Plugin::getInstance()->getServer()->getWorldManager();
-      $manager->isWorldLoaded($position->getWorld()->getName()) && $manager->loadWorld($position->getWorld()->getName(), true);
+      $manager->isWorldLoaded($position->getWorld()->getDisplayName()) && $manager->loadWorld($position->getWorld()->getDisplayName(), true);
       
       if ($player->teleport($position)) {
         $ev = new WarpTeleportEvent(new Warp($name), $player);

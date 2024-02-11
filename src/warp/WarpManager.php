@@ -36,7 +36,7 @@ final class WarpManager {
           'x' => $position->getX(),
           'y' => $position->getY(),
           'z' => $position->getZ(),
-          'world' => $position->getWorld()->getName()
+          'world' => $position->getWorld()->getDisplayName()
         ]
       ];
       self::getConfig()->set(['warps.' . $name => $data]);
