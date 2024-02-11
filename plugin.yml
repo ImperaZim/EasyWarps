@@ -1,11 +1,11 @@
 name: EasyWarps
-version: 1.0.0
-author: ImperaZim 
-api: [4.0.0]
-main: ImperaZim\EasyWarps\Loader
+version: 2.0.0
+
+api: 5.0.0
+main: Plugin
 
 permissions:
-  easywarps.operator.command:
+  easywarps.admin:
     default: op
-  easywarps.default.command:
+  easywarps.default:
     default: true

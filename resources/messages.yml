@@ -1,0 +1,15 @@
+
+
+# FORM TEXTS
+warp_list_form: '§lWARPS'
+warp_list_button: '§l{WARP}§r{LINE_UP}teleportar'
+
+# COMMANDS CALLBACK MESSAGES
+warp_list: 'Lista de warps:'
+warp_created_successfully: 'Warp {WARP} criada com sucesso!'
+warp_created_fail: 'Warp {WARP} já existe!'
+warp_deleted_successfully: 'Warp {WARP} deletada com sucesso!'
+warp_deleted_fail: 'Warp {WARP} não existe!'
+warp_teleported_successfully: 'Você teleportou-se para §e[{WARP}]§r com sucesso!'
+warp_teleported_no_permission: 'Você não tem permissão para teleportar para a warp {WARP}'
+warp_dont_exist: 'A warp {WARP} não existe!'
