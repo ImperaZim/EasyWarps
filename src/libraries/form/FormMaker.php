@@ -2,8 +2,7 @@
 
 namespace libraries\form;
 
-use player\Player;
-use libraries\form\BaseForm as IForm;
+use pocketmine\player\Player;
 
 /**
 * Class FormMaker
@@ -12,9 +11,9 @@ use libraries\form\BaseForm as IForm;
 abstract class FormMaker {
 
   /**
-  * @var IForm|null
+  * @var BaseForm|null
   */
-  private ?IForm $form = null;
+  private ?BaseForm $form = null;
 
   /**
   * FormMaker constructor.
@@ -34,7 +33,7 @@ abstract class FormMaker {
   public function send(): void {
     try {
       $form = $this->form;
-      if ($form instanceof IForm) {
+      if ($form instanceof BaseForm) {
         $form->sendTo($this->player);
       }
     } catch (\Throwable $e) {
@@ -57,10 +56,10 @@ abstract class FormMaker {
 
   /**
   * Set the base form.
-  * @param IForm $form
+  * @param BaseForm $form
   * @return $this
   */
-  public function setBaseForm(IForm $form): self {
+  public function setBaseForm(BaseForm $form): self {
     $this->form = $form;
     return $this;
   }
