@@ -1,9 +1,0 @@
---- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/ImperaZim/EasyWarps
-build-by-default: true
-branches:
-- main
-projects:
-  EasyWarps:
-    path: ""
-    icon: "icon.png" 
-...
