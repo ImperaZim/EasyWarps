@@ -39,7 +39,7 @@ final class WarpManager {
           'world' => $position->getWorld()
         ]
       ];
-      self::getConfig()->set('warps.' . $name, $data);
+      self::getConfig()->set(['warps.' . $name => $data]);
       return true;
     }
     return false;
@@ -53,7 +53,8 @@ final class WarpManager {
   public static function delete(string $name) : bool {
     $warps = self::getConfig()->get('warps', []);
     if (isset($warps[$name])) {
-      self::getConfig()->unset('warps', $name);
+      unset($warps[$name]);
+      self::getConfig()->set(['warps' => $warps]);
       return true;
     }
     return false;

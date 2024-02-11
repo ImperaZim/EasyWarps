@@ -65,7 +65,7 @@ final class WarpsForms extends FormMaker {
     try {
       $this->setBaseForm(
         form: new MenuForm(
-          title: \Plugin::getInstance()->messages->get('warp_created_fail', 'unknow_message'),
+          title: \Plugin::getInstance()->messages->get('warp_list_form', 'unknow_message'),
           content: count((array) $this->getButtons()) > 0 ? '' : \Plugin::getInstance()->messages->get('warp_list_empty', 'unknow_message'),
           buttons: (array) $this->getButtons(),
           onSubmit: fn($player, $button) => $this->getSubmitCallback(
