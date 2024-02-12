@@ -120,7 +120,7 @@ final class WarpsForms extends FormMaker {
       $manager->isWorldLoaded($position->getWorld()->getDisplayName()) && $manager->loadWorld($position->getWorld()->getDisplayName(), true);
       
       if ($player->teleport($position)) {
-        $ev = new WarpTeleportEvent(new Warp($name), $player);
+        $ev = new WarpTeleportEvent($warp, $player);
         $ev->call();
       }
     } catch (\Throwable $e) {

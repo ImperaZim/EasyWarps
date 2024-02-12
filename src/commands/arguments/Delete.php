@@ -2,6 +2,7 @@
 
 namespace commands\arguments;
 
+use warp\Warp;
 use warp\WarpManager;
 use events\WarpDeleteEvent;
 use pocketmine\player\Player;
