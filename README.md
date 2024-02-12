@@ -8,8 +8,8 @@
 <p align="center">A simple plugin to set teleport points on worlds to make it easier for players to get around!.</p>
 
 - - - -
-## Download
-**[PHAR](https://imperazim.cloud/plugins/download/?plugin=easywarps)**
+## Download 
+Download the **[PHAR](https://imperazim.cloud/plugins/download/?plugin=easywarps)** version and add it to your server quickly and easily!
 
 - - - -
 ## Software support
