@@ -88,7 +88,7 @@ final class WarpsForms extends FormMaker {
     $buttons = [];
     foreach (WarpManager::list() as $warp) {
       $buttons[] = new Button(
-        text: [explode(':', str_replace(['{WARP}', '{LINE_UP}'], [$warp->getName(), ':'], \Plugin::getInstance()->messages->get('warp_list_button', 'unknow_message')))],
+        text: explode(':', str_replace(['{WARP}', '{LINE_UP}'], [$warp->getName(), ':'], \Plugin::getInstance()->messages->get('warp_list_button', 'unknow_message'))),
         image: Image::null(),
         value: $warp->getName()
       );
