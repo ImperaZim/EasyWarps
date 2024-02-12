@@ -8,6 +8,7 @@ use libraries\form\MenuForm;
 use libraries\form\FormMaker;
 use events\WarpTeleportEvent;
 use pocketmine\player\Player;
+use libraries\form\menu\Image;
 use libraries\form\menu\Button;
 use libraries\commando\BaseCommand;
 
