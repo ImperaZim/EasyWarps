@@ -8,8 +8,8 @@
 <p align="center">A simple plugin to set teleport points on worlds to make it easier for players to get around!.</p>
 
 - - - -
-## Download 
-Download the **[PHAR](https://imperazim.cloud/plugins/download/?plugin=easywarps)** version and add it to your server quickly and easily!
+## Downloads
+Download the **[PHAR](https://imperazim.cloud/plugins/download/?plugin=easywarps)** version of the plugin and its dependencies **[EasyLibrary](https://imperazim.cloud/plugins/download/?plugin=easylibrary)** and upload it to your server quickly and easily!
 
 - - - -
 ## Software support
@@ -20,3 +20,22 @@ Download the **[PHAR](https://imperazim.cloud/plugins/download/?plugin=easywarps
 -  [WarpCreateEvent](https://github.com/ImperaZim/EasyWarps/blob/main/src/ImperaZim/EasyWarps/events/WarpCreateEvent.php): **Always** called when an admin creates a new warp.
 -  [WarpDeleteEvent](https://github.com/ImperaZim/EasyWarps/blob/main/src/ImperaZim/EasyWarps/events/WarpDeleteEvent.php): **Always** called when an admin deletes a warp.
 -  [WarpTeleportEvent](https://github.com/ImperaZim/EasyWarps/blob/main/src/ImperaZim/EasyWarps/events/WarpTeleportEvent.php): **Always** called when a player teleports to a wrap.
+
+## License
+```
+© ImperaZim • EasyWarps 2024
+EasyWarps, the group plugin with many features for PocketMine-MP
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+``` 

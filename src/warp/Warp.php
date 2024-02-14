@@ -2,6 +2,7 @@
 
 namespace warp;
 
+use Warps;
 use pocketmine\Server;
 use libraries\utils\File;
 use pocketmine\world\Position;
@@ -23,7 +24,7 @@ final class Warp {
   * @param string|null $name
   */
   public function __construct(private ?string $name) {
-    $this->file = new File('warps');
+    $this->file = new File(Warps::getInstance(), 'warps', '.yml');
   }
 
   /**

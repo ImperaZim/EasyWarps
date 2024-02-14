@@ -33,7 +33,7 @@ class Lista extends BaseSubCommand {
         return;
       }
 
-      $player->sendMessage($this->getOwningPlugin()->messages->get('warp_list', 'unknow_message'));
+      $player->sendMessage($this->getOwningPlugin()->getMessage('warp_list', 'unknow_message'));
       foreach (WarpManager::list() as $warp) {
         $player->sendMessage($warp->getName());
       }

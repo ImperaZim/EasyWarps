@@ -6,20 +6,15 @@ use pocketmine\utils\SingletonTrait;
 use libraries\utils\File;
 use commands\WarpCommand;
 use commands\WarpsCommand;
-use libraries\commando\PacketHooker;
 
 /**
  * Class Plugin
- * @package YourPluginNamespace
  */
 final class Plugin extends PluginBase {
   use SingletonTrait;
   
   /** @var File */
   public File $messages;
-
-  /** @var PacketHooker */
-  public PacketHooker $hooker;
 
   /**
    * Called when the plugin is loaded.
@@ -32,14 +27,17 @@ final class Plugin extends PluginBase {
    * Called when the plugin is enabled.
    */
   public function onEnable() : void {
-    $this->hooker = new PacketHooker($this);
+    if ($this->getServer()->getPluginManager()->getPlugin('EasyLibrary') === null) {
+      $this->getLogger()->error('EasyLibrary is required!');
+      $this->getLogger()->error('(https://github.com/ImperaZim/EasyLibrary/');
+      $this->getServer()->forceShutdown();
+      return;
+    }
     $this->messages = new File('messages', 'YML');
-    
     $this->getServer()->getPluginManager()->registerEvents(
       listener: new PluginListener(),
       plugin: $this
     );
-    
     $this->getServer()->getCommandMap()->registerAll(
       fallbackPrefix: 'SkyBlock',
       commands: [

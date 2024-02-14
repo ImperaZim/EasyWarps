@@ -42,7 +42,7 @@ class Delete extends BaseSubCommand {
         $ev = new WarpDeleteEvent(new Warp($name), $player);
         $ev->call();
       } else {
-        $player->sendMessage(str_replace('{WARP}', $name, $this->getOwningPlugin()->messages->get('warp_deleted_fail', 'unknow_message')));
+        $player->sendMessage(str_replace('{WARP}', $name, $this->getOwningPlugin()->getMessage('warp_deleted_fail', 'unknow_message')));
       }
     } catch (\Throwable $e) {
       new \crashdump($e);

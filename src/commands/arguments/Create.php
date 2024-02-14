@@ -44,7 +44,7 @@ class Create extends BaseSubCommand {
         $ev = new WarpCreateEvent(new Warp($name), $player);
         $ev->call();
       } else {
-        $player->sendMessage(str_replace('{WARP}', $name, $this->getOwningPlugin()->messages->get('warp_created_fail', 'unknow_message')));
+        $player->sendMessage(str_replace('{WARP}', $name, $this->getOwningPlugin()->getMessage('warp_created_fail', 'unknow_message')));
       }
     } catch (\Throwable $e) {
       new \crashdump($e);

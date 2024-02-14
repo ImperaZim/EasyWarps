@@ -2,8 +2,10 @@
 
 namespace commands;
 
+use Warps;
 use warp\Warp;
 use warp\WarpManager;
+use pocketmine\Server;
 use libraries\form\MenuForm;
 use libraries\form\FormMaker;
 use events\WarpTeleportEvent;
@@ -66,8 +68,8 @@ final class WarpsForms extends FormMaker {
     try {
       $this->setBaseForm(
         form: new MenuForm(
-          title: \Plugin::getInstance()->messages->get('warp_list_form', 'unknow_message'),
-          content: count((array) $this->getButtons()) > 0 ? '' : \Plugin::getInstance()->messages->get('warp_list_empty', 'unknow_message'),
+          title: Warps::getInstance()->getMessage('warp_list_form', 'unknow_message'),
+          content: count((array) $this->getButtons()) > 0 ? '' : Warps::getInstance()->getMessage('warp_list_empty', 'unknow_message'),
           buttons: (array) $this->getButtons(),
           onSubmit: fn($player, $button) => $this->getSubmitCallback(
             player: $player,
@@ -88,7 +90,7 @@ final class WarpsForms extends FormMaker {
     $buttons = [];
     foreach (WarpManager::list() as $warp) {
       $buttons[] = new Button(
-        text: explode(':', str_replace(['{WARP}', '{LINE_UP}'], [$warp->getName(), ':'], \Plugin::getInstance()->messages->get('warp_list_button', 'unknow_message'))),
+        text: explode(':', str_replace(['{WARP}', '{LINE_UP}'], [$warp->getName(), ':'], Warps::getInstance()->getMessage('warp_list_button', 'unknow_message'))),
         image: Image::null(),
         value: $warp->getName()
       );
@@ -107,16 +109,16 @@ final class WarpsForms extends FormMaker {
     try {
       $warp = new Warp($button->getValue());
       if (!$warp->exists()) {
-        $player->sendMessage(str_replace('{WARP}', $warp->getName(), \Plugin::getInstance()->messages->get('warp_dont_exist', 'unknow_message')));
+        $player->sendMessage(str_replace('{WARP}', $warp->getName(), Warps::getInstance()->getMessage('warp_dont_exist', 'unknow_message')));
         return null;
       }
       if (!$player->hasPermission($warp->getPermission())) {
-        $player->sendMessage(str_replace('{WARP}', $warp->getName(), \Plugin::getInstance()->messages->get('warp_teleported_no_permission', 'unknow_message')));
+        $player->sendMessage(str_replace('{WARP}', $warp->getName(), Warps::getInstance()->getMessage('warp_teleported_no_permission', 'unknow_message')));
         return null;
       }
       
       $position = $warp->getPosition();
-      $manager = \Plugin::getInstance()->getServer()->getWorldManager();
+      $manager = Server::getInstance()->getWorldManager();
       $manager->isWorldLoaded($position->getWorld()->getDisplayName()) && $manager->loadWorld($position->getWorld()->getDisplayName(), true);
       
       if ($player->teleport($position)) {

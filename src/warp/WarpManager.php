@@ -2,6 +2,7 @@
 
 namespace warp;
 
+use Warps;
 use libraries\utils\File;
 use pocketmine\world\Position;
 
@@ -17,7 +18,7 @@ final class WarpManager {
   * @return File
   */
   public static function getConfig() : File {
-    return new File('warps');
+    return new File(Warps::getInstance(), 'warps', '.yml');
   }
 
   /**

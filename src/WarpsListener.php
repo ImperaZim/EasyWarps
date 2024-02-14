@@ -6,9 +6,9 @@ use events\WarpTeleportEvent;
 use pocketmine\event\Listener;
 
 /**
-* Class PluginListener
+* Class WarpsListener
 */
-final class PluginListener implements Listener {
+final class WarpsListener implements Listener {
 
   /**
   * Handles the event when a warp is created.
@@ -17,7 +17,7 @@ final class PluginListener implements Listener {
   public function onWarpCreation(WarpCreateEvent $event) : void {
     $warp = $event->getWarp();
     $player = $event->getPlayer();
-    $player->sendMessage(str_replace('{WARP}', $warp->getName(), Plugin::getInstance()->messages->get('warp_created_successfully', 'unknown_message')));
+    $player->sendMessage(str_replace('{WARP}', $warp->getName(), Warps::getInstance()->getMessage('warp_created_successfully', 'unknown_message')));
   }
 
   /**
@@ -27,7 +27,7 @@ final class PluginListener implements Listener {
   public function onWarpDeletion(WarpDeleteEvent $event) : void {
     $warp = $event->getWarp();
     $player = $event->getPlayer();
-    $player->sendMessage(str_replace('{WARP}', $warp->getName(), Plugin::getInstance()->messages->get('warp_deleted_successfully', 'unknown_message')));
+    $player->sendMessage(str_replace('{WARP}', $warp->getName(), Warps::getInstance()->getMessage('warp_deleted_successfully', 'unknown_message')));
   }
 
   /**
@@ -37,6 +37,6 @@ final class PluginListener implements Listener {
   public function onWarpTeleport(WarpTeleportEvent $event) : void {
     $warp = $event->getWarp();
     $player = $event->getPlayer();
-    $player->sendMessage(str_replace('{WARP}', $warp->getName(), Plugin::getInstance()->messages->get('warp_teleported_successfully', 'unknown_message')));
+    $player->sendMessage(str_replace('{WARP}', $warp->getName(), Warps::getInstance()->getMessage('warp_teleported_successfully', 'unknown_message')));
   }
 }

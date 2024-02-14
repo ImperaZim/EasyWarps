@@ -2,6 +2,7 @@
 
 namespace commands;
 
+use Warps;
 use pocketmine\player\Player;
 use libraries\commando\BaseCommand;
 
@@ -27,9 +28,9 @@ final class WarpCommand extends BaseCommand {
   */
   protected function prepare(): void {
     $this->setPermission(self::BASE_PERMS);
-    $this->registerSubCommand(new arguments\Create('create', '§7Crie um novo ponto de teleport warp!'));
-    $this->registerSubCommand(new arguments\Delete('delete', '§7Delete um ponto de teleport warp!'));
-    $this->registerSubCommand(new arguments\Lista('list', '§7Veja os pontos de teleport warp salvos!'));
+    $this->registerSubCommand(new arguments\Create(Warps::getInstance(), 'create', '§7Crie um novo ponto de teleport warp!'));
+    $this->registerSubCommand(new arguments\Delete(Warps::getInstance(), 'delete', '§7Delete um ponto de teleport warp!'));
+    $this->registerSubCommand(new arguments\Lista(Warps::getInstance(), 'list', '§7Veja os pontos de teleport warp salvos!'));
   }
 
   /**
