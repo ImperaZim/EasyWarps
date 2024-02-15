@@ -39,7 +39,7 @@ final class Warps extends PluginBase {
       plugin: $this
     );
     $this->getServer()->getCommandMap()->registerAll(
-      fallbackPrefix: 'SkyBlock',
+      fallbackPrefix: 'EasyWarps',
       commands: [
         new WarpCommand(Warps::getInstance(), 'warp', '§7Sistema de warps'),
         new WarpsCommand(Warps::getInstance(), 'warps', '§7Sistema de warps'),
