@@ -1,0 +1,83 @@
+{
+  "forms": {
+    "warp_create_title": "§lWARP CREATE",
+    "warp_create_input_name": {
+      "text": "Warp Name",
+      "placeholder": "Name"
+    },
+    "warp_create_input_permission": {
+      "text": "Warp Permission",
+      "placeholder": "Permission"
+    },
+    "warp_create_input_message": {
+      "text": "Warp Teleport Message",
+      "placeholder": "Message"
+    },
+    "warp_create_input_button": {
+      "text": "Warp List Button",
+      "placeholder": "§l{warp}\nteleport"
+    },
+    "warp_create_input_image": {
+      "text": "(use format: path:bla/bla/bla.png)",
+      "placeholder": "path|textures/items/iron_sword"
+    },
+    "warp_create_options_message": {
+      "text": "Message Type  (If you use screen and want to use subtitle, use | to separate the lines!)"
+    },
+    "warp_selector_edit_title": "§lSELECT A WARP TO EDIT",
+    "warp_selector_edit_button": "§l{warp}§r{up}Click to edit",
+    "warp_delete_title": "§lSELECT A WARP TO DELETE",
+    "warp_delete_button": "§l{warp}§r{up}Click to delete",
+    "warp_edit_title": "§l{warp}",
+    "warp_edit_input_name": {
+      "text": "Warp Name",
+      "placeholder": "Name"
+    },
+    "warp_edit_input_permission": {
+      "text": "Warp Permission",
+      "placeholder": "Permission"
+    },
+    "warp_edit_input_message": {
+      "text": "Warp Teleport Message",
+      "placeholder": "Message"
+    },
+    "warp_edit_input_button": {
+      "text": "Warp List Button",
+      "placeholder": "§l{warp}\nteleport"
+    },
+    "warp_edit_input_image": {
+      "text": "(use format: path:bla/bla/bla.png)",
+      "placeholder": "path|textures/items/iron_sword"
+    },
+    "warp_edit_options_message": {
+      "text": "Message Type  (If you use screen and want to use subtitle, use | to separate the lines!)"
+    },
+    "warp_list_title": "§lWARPS",
+    "warp_list_empty_content": "§7No warps available"
+  },
+  "commands": {
+    "warp_names": ["warp"],
+    "warp_description": "Use warp commands as admin.",
+    "warps_names": ["warps"],
+    "warps_description": "See the available warps."
+  },
+  "subcommands": {
+    "list_names": ["list"],
+    "list_description": "See the list of available warps.",
+    "edit_names": ["edit"],
+    "edit_description": "Edit an existing warp.",
+    "create_names": ["create"],
+    "create_description": "Create a new warp.",
+    "delete_names": ["delete"],
+    "delete_description": "Delete an existing warp."
+  },
+  "messages": {
+    "warp_list": "List of warps: {line}{list}.",
+    "warp_not_found": "Warp {warp} does not exist!",
+    "warp_delete_success": "Warp {warp} deleted successfully!",
+    "warp_created_successfully": "Warp {warp} created successfully!",
+    "warp_updated_successfully": "Warp {warp} updated successfully!",
+    "no_permission": "You do not have permission to go to the warp {warp}.",
+    "world_error": "There seems to be some problem with the location of this warp!"
+  }
+}

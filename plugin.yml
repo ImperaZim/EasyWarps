@@ -1,9 +1,15 @@
 name: EasyWarps
-version: 2.0.0
+version: 3.0.0-BETA
+authors:
+  - ImperaZim
 
 api: 5.0.0
-main: Warps
-load: POSTWORLD
+main: imperazim\EasyWarps
+
+depend:
+  - EasyLibrary
+extensions:
+  Core: ">=8.2"
 
 permissions:
   easywarps.admin:
